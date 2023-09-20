@@ -2,7 +2,7 @@
 
 from scapy.all import *
 
-ip   = IP(src="10.9.0.5", dst="10.9.0.6")
+ip   = IP(src="192.168.44.131", dst="192.168.44.129")
 udp  = UDP(sport=9090, dport=9090)
 data = "Let the Ping Pong game start!\n"
 pkt  = ip/udp/data

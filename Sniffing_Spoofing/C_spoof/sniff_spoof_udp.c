@@ -31,7 +31,7 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header,
             return;
         case IPPROTO_UDP:
             printf("   Protocol: UDP\n");
-	    spoof_reply_udp(ip);
+	        spoof_reply_udp(ip);
             return;
         case IPPROTO_ICMP:
             printf("   Protocol: ICMP\n");
@@ -51,8 +51,8 @@ int main()
   char filter_exp[] = "udp";
   bpf_u_int32 net;
 
-  // Step 1: Open live pcap session on NIC with name enp0s3
-  handle = pcap_open_live("enp0s3", BUFSIZ, 1, 1000, errbuf);
+  // Step 1: Open live pcap session on NIC with name ens33
+  handle = pcap_open_live("ens33", BUFSIZ, 1, 1000, errbuf);
 
   // Step 2: Compile filter_exp into BPF psuedo-code
   pcap_compile(handle, &fp, filter_exp, 0, net);
